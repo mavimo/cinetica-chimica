@@ -1,0 +1,61 @@
+\documentclass[12pt,a4paper,twoside,openright]{book}
+
+\setlength{\oddsidemargin} {2. cm}
+\setlength{\evensidemargin} {2. cm}
+\addtolength{\oddsidemargin} {-0.4 cm}
+\addtolength{\evensidemargin} {-0.4 cm}
+\linespread{1.1}
+
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+
+% La descrizione di figure e tabelle
+\usepackage{graphicx}\usepackage[margin=20pt, font=small, labelfont=bf]{caption}
+
+\usepackage{hyperref}		% Link interni clickabili
+
+% Informazioni che vengono inserite come descrizione del PDF prodotto.
+\hypersetup{
+	pdftitle = {Cinetica chimica},
+	pdfsubject = {Appunti del corso tenuto da C. Cavallortti al Politecnico di Milano},
+	pdfkeywords = {cinetica, chimica, appunti, polimi},
+	pdfauthor = {\textcopyright\ Marco Vito Moscaritolo},
+	pdfcreator = {\LaTeX},
+	pdfproducer = {pdfeTeX-0.\the\pdftexversion\pdftexrevision},
+}
+
+% Imposta il colore dei link.
+\hypersetup{colorlinks=true,
+						linkcolor=magenta,		% Colore dei link interni al documento
+						anchorcolor=magenta,	% Colore dei link ad ancore
+						citecolor=magenta,		% Colore dei link a fonti bibliografiche
+						filecolor=magenta,		% Colore dei link a file locali
+						menucolor=magenta,		% Colore dei link nel menu di adobe Acrobat Reader
+						pagecolor=magenta,		% Colore dei link ad altre pagine
+						urlcolor=magenta,			% Colore dei link a url
+					 }
+					 
+\begin{document}
+
+	\include{frontespizio}
+	
+	\frontmatter
+		\tableofcontents
+	\clearpage
+
+  \mainmatter
+		\include{isoterme}
+		\include{teor_gas}
+		\include{quantomeccanica}
+		\include{termostat}
+		\include{statotransiz}
+		\include{reaxsoluzione}
+% \chapter{Cinetica enzimatica}
+
+	\appendix
+		\include{appendiceA}
+		
+	\listoffigures
+%	\listoftables	
+\end{document}

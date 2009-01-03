@@ -1,0 +1,32 @@
+\chapter{Tabella degli integrali}
+Data la funzione $f_{(n)}$ definita come:
+\begin{equation}
+	f_{(n)} = \int_0^{\infty} n^x \cdot e^{-\alpha \cdot x^2} d x
+	\label{eq:AppA:IntegraleGenerico}
+\end{equation}
+con $\alpha > 0$ abbiamo:
+\begin{table*}[h]
+	\centering
+		\begin{tabular}{lr}
+			n		&		$f_{(n)}$ \\ \hline
+			0		&		$\frac{1}{2} \sqrt{\frac{\pi}{\alpha}} $  			\vspace{0.2cm} \\ \hline
+			1		&		$\frac{1}{2 \alpha}$ 														\vspace{0.2cm} \\ \hline
+			2		&		$\frac{1}{4} \sqrt{\frac{\pi}{\alpha^3}} $ 			\vspace{0.2cm} \\ \hline
+			3		&		$\frac{1}{2 \alpha^2}$ 													\vspace{0.2cm} \\ \hline
+			4		&		$\frac{3}{8} \sqrt{\frac{\pi}{\alpha?5}} $ 			\vspace{0.2cm} \\ \hline
+			5		&		$\frac{1}{\alpha^3}$ 														\vspace{0.2cm} \\ \hline
+			6		&		$\frac{15}{16} \sqrt{\frac{\pi}{\alpha^7}} $ 		\vspace{0.2cm} \\ \hline
+			7		&		$\frac{3}{\alpha^4}$ 														\vspace{0.2cm} \\ \hline
+		\end{tabular}
+\end{table*}
+
+Si noti, anche, che per $n$ pari vale la seguente regola:
+\begin{equation}
+	\int_{-\infty}^{\infty} n^x \cdot e^{-\alpha \cdot x^2} d x = 2 \cdot f_{(n)}
+	\label{eq:AppA:IntegraleGenericoPari}
+\end{equation}
+mentre per per $n$ dispari:
+\begin{equation}
+	\int_{-\infty}^{\infty} n^x \cdot e^{-\alpha \cdot x^2} d x = 0
+	\label{eq:AppA:IntegraleGenericoDispari}
+\end{equation}

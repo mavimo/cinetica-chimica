@@ -1,0 +1,391 @@
+\chapter{Termodinamica statistica}
+
+La termodinamica statistica si occupa di collegare le proprietà macroscopiche 
+della materia a quele delle particelle che la compongono. Dal punto di vista microscopico un sistema termodinamico è definito quando sono note le caratteristiche dinamiche delle particelle di cui è costituito.
+
+Secondo la meccanica quantistica una particella può assumere solo una serie di valori discreti di energia, essendo queste quantizzate, e questa sarà data da:
+\begin{equation}
+	E = N_1 \epsilon_1 + N_2 \epsilon_2 + \dots + N_n \epsilon_n = \sum_{i=1}^{n} N_i \epsilon_i
+	\label{eq:EnergiaSistema}
+\end{equation}
+dove $N_i$ indica il numero di particelle nello stato $i$-esimo, mentre $\epsilon_i$ le energie dello stato considerato.
+
+Se si variano gli $N_i$, mantenendo costante la loro somma, si ottiene una serie di stati del sistema, chiamati \textsl{microstati}, la cui energia, per il microstato $E_r$, risulterà essere:
+\begin{equation}
+	E_r = \sum_{i=1}^{n} N_{i, r} \cdot \epsilon_i
+	\label{eq:StatiSistema}
+\end{equation}
+
+Poichè il numero di particelle è molto elevato e le differenze di energia sono molto basse dal punto di vista macroscopico, l'energia si comporta come una grandezza continua.
+
+Riassumendo, indichiamo con il termine \textsl{microstato} di un sistema termodinamico un particolare sistema caratterizzato da una particolare struttura energetica microscopica.
+
+Indicheremo con $\Omega_{(E)}$ il numero di microstati che un sistema di energia $E$ può assumere; questa funzione assume un adamento caratteristico per ogni sistema, ma in generale è possibile dire che è equiparabile a:
+\begin{equation}
+	\Omega_{(E)} \propto E^n
+	\label{eq:MicrostatiSistema}
+\end{equation}
+dove $n$ è il numero di particelle del sistema.
+
+L'insieme di microstati che il sistema può assumere è chiamato \textit{insieme statistico} ed è rappresentativo del sistema in esame.
+%==================================================================================================
+\section{Postulati della termodinamica statistica}
+Preso un insieme di $\aleph$ eventi, con $\aleph$ molto elevato, che si verificano in sistemi simili, la probabilità che un particolare evento $\aleph_R$ si verifichi è espresso da:
+\begin{equation}
+	\omega_{R} = \underset{\aleph \rightarrow \infty}{lim} \frac{\aleph_R}{\aleph}
+	\label{eq:MicrostatiSistema}
+\end{equation}
+
+Consideriamo ora un sistema chiuso in condizioni di equilibrio (quindi in uno dei micristati compatibili con l'energia posseduta); osservandolo per un tempo $\tau$ e presa una particolare grandezza $Y$, il suo valore medio è dato da:
+\begin{equation}
+	<Y> = \underset{\aleph \rightarrow \infty}{lim} \frac{1}{\tau} \int_0^{\tau} Y_{(t)} d t = 
+				\sum_R \omega_R \cdot Y_R
+	\label{eq:ValoreMedioSistema}
+\end{equation}
+da cui si ricava il primo pustulato, che enuncia:\\
+\textsl{Il valore medio di una proprietà di un sistema termodinamico è equivalente al valore osservato mediato nel tempo.}
+
+Questo enunciato correla i risultati ottenuti con i metodi statistici a quelli ottenuti con metodi sperimentali, mentre il secondo eneunciato, affema:\\
+\textsl{In un sistema termodinamico isolato e in equilibrio tutti i suoi stati accessibili hanno la stessa probabilità.}
+
+L'insieme dei microstati accessibili a un sistema isolato viene chiamato \textsl{microcanonico} e, in accordo con il postulato precedente, la loro probabilità è espressa da:
+\begin{equation}
+	\omega = \frac{1}{\Omega (E)}
+	\label{eq:ProbabilitaMicrocanonico}
+\end{equation}
+
+%==================================================================================================
+\section{Sistema a contatto con bagno termico}
+Consideriamo un sistema chiuso a contatto con un bagno termico. All'equilibrio l'energia totale del sistema e ambiente è macroscopicamente costante, mentre il suo valore microscopico fluttuerà nell'intorno del suo valore medio $E_R$.
+
+Per rappresentare il sistema si ricorre ad un insieme statistico rappresentativo, detto \textsl{canonico}, formato da un elevato numero di sistemi uguali al sistema indagato, ma che possono assumere un qualsiasi suo stato, indipendentemente dal valore energetico.
+
+Fissiamo uno dei suoi microstati $R$ la cui energia risulta essere $E_R$; l'ambiente si troverà in uno dei suoi microstati la cui energia è $(E- E_R)$ per cui:
+\begin{equation}
+	\Omega(E) = \sum_r \Omega_{A}(E - E_R)
+	\label{eq:MicrostatiSistemaAmbiente}
+\end{equation}
+ma anche, ricordando l'equazione \ref{eq:MicrostatiSistema}:
+\begin{equation}
+	\omega_{R} = \frac{\Omega_{A}(E - E_R)}{\Omega (E)}
+	\label{eq:MicrostatiSistemaAmbiente}
+\end{equation}
+Essendo, per l'equazione \ref{eq:MicrostatiSistema}, $\Omega_{(E)}=C \cdot E^n$ avremo:
+\begin{equation}
+	\omega_{R} = \frac{C_1 \cdot (E - E_R)^{n_A}}
+										{C_2 \cdot(E)^{n_{TOT}}}
+	\label{eq:omegaSistema}
+\end{equation}
+
+Essendo l'ambiente molto più grande del sistema in esame è anche vero che $n_R << n_A$ e di conseguenza $n_A = n_{TOT} - n_R \approx n_{TOT}$ e quindi:
+\begin{equation}
+	\omega_{R} = \frac{C_1 \cdot (E - E_R)^{n_{TOT}}}{C_2 \cdot(E)^{n_{TOT}}} = 
+							 C \cdot \left(\frac{E - E_R}{E}\right)^{n_{TOT}} = 
+							 C \cdot \left( 1 - \frac{E_R}{E}\right)^{n_{TOT}}
+	\label{eq:aomegaSistemaSemplificato}
+\end{equation}
+poichè $E_R << E$ e per $x$ che tende a $0$ è valida l'approssimazione\footnote{Infatti espandendo in serie di Taylor $e^{-x} = 1 - x - \dots$ che quindi si può approssimare come $e^{-x} \approx 1 - x$.} $1 - x = e^{-x}$  abbiamo:
+\begin{equation}
+	\omega_{R}	= C \cdot \left(e^{-\frac{E_R}{E}}\right)^{n_{TOT}}
+							= C \cdot e^{-\beta E_R}
+	\label{eq:omegaSistemaApprox}
+\end{equation}
+nota come \textsl{funzione di distribuzione canonica}. Questa equazione esprime la probabilità del sistema di trovarsi in un particolare microstato $R$.
+
+Essendo $\sum_R \omega_R = 1$ possiamo anche scrivere:
+\begin{equation}
+	\omega_{R}	= \frac{\omega_{R}}{\sum_R \omega_R} =
+								\frac{C \cdot e^{-\beta E_R}}{\sum_R C \cdot e^{-\beta E_R}} = 
+								\frac{e^{-\beta E_R}}{\sum_R e^{-\beta E_R}}
+	\label{eq:omegaSistemaApproxTot}
+\end{equation}
+
+\section{Applicazione alla termodinamica}
+Essendo l'energia totale del sistema $U$ pari alla energia media del sistema, abbiamo:
+\begin{equation}
+	U = \sum_R \omega_{R} \cdot E_R = \sum_R  E_R \cdot \frac{e^{-\beta E_R}}{\sum_R e^{-\beta E_R}}
+	\label{eq:EnergiaTotSistema}
+\end{equation}
+
+Differenziando l'energia del sistema è evidente che:
+\begin{equation}
+	d U = \sum_R \omega_R d E_R + \sum_R E_R d \omega_R
+	\label{eq:DifferenzialeU}
+\end{equation}
+dove il primo termine esprime la variazione dell'energia degli stati per mezzo di variazioni esterne (quale il volume), mentre il secondo dipende dalla redistribuzione dell'energia nei vari stati.\\
+Ricordando il primo principio della termodinamica
+\begin{equation}
+	d U = d Q + d W
+	\label{eq:PrimoPrincTermodinamica}
+\end{equation}
+è evidente che:
+\begin{align}
+	d Q & = \sum_R E_R d \omega_R \\
+	d W & = \sum_R \omega_R d E_R 
+	\label{eq:dQdW}
+\end{align}
+Introduciamo la funzione $S$ definita come 
+\begin{equation}
+	S = - k \sum_R \omega_R \ln \omega_R
+	\label{eq:EntropiaStatistica}
+\end{equation}
+con $k = cost$ e, per l'equazione \ref{eq:ValoreMedioSistema} che definisce il valore medio di una variabile, $\sum_R \omega_R \ln \omega_R = <\ln \omega_R>$.
+
+Ricordando l'equazione \ref{eq:omegaSistemaApproxTot}, e indicando con $z = \sum_R e^{-\beta E_R}$ otteniamo:
+\begin{equation}
+	\omega_{R}	= \frac{e^{-\beta E_R}}{\sum_R e^{-\beta E_R}} = \frac{e^{-\beta E_R}}{z}
+	\label{eq:omegaSistemaApproxTotZ}
+\end{equation}
+Logaritmando l'equazione sopra riportata ricaviamo:
+\begin{equation}
+	\ln \omega_{R}	= \ln \frac{e^{-\beta E_R}}{z} = \ln e^{-\beta E_R} - \ln z = -\beta E_R - \ln z 
+	\label{eq:LnOmegaSistema}
+\end{equation}
+ed inserendola nella \ref{eq:EntropiaStatistica} abbiamo:
+\begin{equation}
+	S = - k \sum_R \omega_R \ln \omega_R = 
+		-k \left[ \sum_R \omega_R \left( -\beta E_R - \ln z  \right)\right] = 
+		k \left(  \ln z + \beta \cdot U \right)
+	\label{eq:entropiaStatisticaOmega}
+\end{equation}
+poichè:
+\begin{align}
+	- \sum_R \omega_R \ln z & = -\ln z \sum_R \omega_R = -\ln z \\
+	- \beta \sum_R \omega_R \cdot E_R & = - \beta \cdot U
+	\label{eq:SostituzioniEntropiaStatistica}
+\end{align}
+
+Differenziando l'espressione di S così ottenuta, abbiamo:
+\begin{multline}
+	d S = k \left[\left( \frac{\partial \ln z}{\partial \beta}\right)_{E_R} d \beta + 
+								\sum_R \left( \frac{\partial \ln z}{\partial E_R}\right)_{\beta} d E_R + 
+								\beta d U + U d \beta	\right] = \\
+			= k \left[-\frac{\sum_R E_R e^{-\beta E_R}}{z} d \beta -
+								\frac{\beta \sum_R  e^{-\beta E_R}}{z} d E_R +
+								\beta d U + U d \beta	\right]
+	\label{eq:DerivataEntropiaStatisticaSostituita}
+\end{multline}
+essendo, come ricavato precedentemente (equazione \ref{eq:EnergiaTotSistema})
+\begin{equation}
+	U = \sum_R  E_R \cdot \frac{e^{-\beta E_R}}{\sum_R e^{-\beta E_R}}
+		= \sum_R  E_R \cdot \frac{e^{-\beta E_R}}{z}
+		= \frac{\sum_R E_R \cdot e^{-\beta E_R}}{z}
+	\label{eq:EnergiaTotSistema2}
+\end{equation}
+l'equazione di $d S$ si semplifica, diventando:
+\begin{equation}
+	d S = k \left[-\sum_R \left( \frac{\partial \ln z}{\partial E_R}\right) d E_R + \beta d U \right]=
+				k \beta \left[ d U -	\sum_R \frac{e^{\beta E_R}}{z} d E_R \right]
+	\label{eq:DerivataEntropiaStatisticaSemplificata}
+\end{equation}
+e per l'equazione \ref{eq:omegaSistemaApproxTotZ} anche:
+\begin{equation}
+	d S = k \cdot \beta \left[ d U - \sum_R \omega_R d E_R\right]
+	\label{eq:DerivataEntropiaStatisticaFinale}
+\end{equation}
+Considerando anche l'equazione \ref{eq:dQdW} otteniamo:
+\begin{equation}
+	d S = k \cdot \beta \left[ d U - d W\right]
+	\label{eq:DerivataEntropiaStatisticaFinale2}
+\end{equation}
+Per quanto noto dalla termodinamica classica:
+\begin{equation}
+	d S = k \cdot \beta \left[ d U -d W\right] = k \cdot \beta d Q
+	\label{eq:DerivataEntropiaStatisticaEnergiaInternaSistema}
+\end{equation}
+Essendo noto, dal secondo principio della termodinamica, che:
+\begin{equation}
+	d S = \frac{d Q}{T}
+	\label{eq:SecondoPrincipioTermodinamica}
+\end{equation}
+di conseguenza:
+\begin{equation}
+	\frac{d Q}{T} =  k \cdot \beta d Q
+	\label{eq:DerivataEntropiaStatisticaSecondoPrincipio}
+\end{equation}
+e anche
+\begin{equation}
+	\beta = \frac{1}{k T}
+	\label{eq:ValoreBeta}
+\end{equation}
+La costante $k$ viene ricavata analizzando un sistema di gas perfetto e vale $k_B$, ovvero la costante di Boltzman. Noto ciò è possibile scrivere:
+\begin{equation}
+	\omega_{R}	= \frac{e^{-\frac{E_R}{k_B T} }}{\sum_R e^{-\frac{E_R}{k_B T} }}
+	\label{eq:OmegaRFinale}
+\end{equation}
+\begin{equation}
+	z	= \sum_R e^{-\frac{E_R}{k_B T}}
+	\label{eq:zFinale}
+\end{equation}
+\begin{equation}
+	S = k_B \ln z + \frac{U}{T}
+	\label{eq:SFinale}
+\end{equation}
+da cui si ricava l'energia libera di Helmotz:
+\begin{equation}
+	F = U - T S = - k_B \cdot T \cdot \ln z
+	\label{eq:EnergiaHelmotz}
+\end{equation}
+
+%==================================================================================================
+\section{Funzione di partizione molecolare}
+Definiamo ora il significato di funzione di partizione molecolare come:
+\begin{equation}
+	Q = \sum e^{- \frac{\epsilon_i}{k_B T}}
+	\label{eq:FunzionePartizioneMolecolare}
+\end{equation}
+avendo posto l'eneriga di una sola molecola come $\epsilon_i$; questo rappresenta le proprietà di una sola molecola.\\
+\'E possibile esprimere anche:
+\begin{equation}
+	z = \sum_i \left( e^{- \frac{\epsilon_i}{k_B T}} \right) \cdot g_R
+	\label{eq:zFunzionePartizioneMolecolare}
+\end{equation}
+dove $g_R$ indica il grado di degenerazione del sistema, ovvero quante volte un sistema in un determinato microstato è degenere. Questo parametro è particolarmente importante se consideriamo le varie particelle indistinguibili tra di loro.
+
+Nel caso di particelle indistinguibili e non interagenti potremmo anche indicare:
+\begin{equation}
+	z_{indist} = \frac{Q^N}{N!}
+	\label{eq:zFunzionePartizioneMolecolareIndist}
+\end{equation}
+mentre nel caso di particelle distinguibili avremmo:
+\begin{equation}
+	z_{dist} = Q^N
+	\label{eq:zFunzionePartizioneMolecolareDist}
+\end{equation}
+
+L'energia di una singola particella $\epsilon_i$ può essere suddivisa in:
+\begin{itemize}
+	\item $\epsilon_{EL} = $ energia elettronica
+	\item $\epsilon_{VIB} = $ energia vibrazionale
+	\item $\epsilon_{ROT} = $ energia rotazionale
+	\item $\epsilon_{TRAS} = $ energia traslazionale
+\end{itemize}
+ed essendo $\epsilon_i = \epsilon_{EL} + \epsilon_{VIB} + \epsilon_{ROT} + \epsilon_{TRAS}$ sarà anche:
+\begin{equation}
+	Q = \sum e^{- \frac{\epsilon_i}{k_B T}}
+		= \sum e^{- \frac{\epsilon_{EL} + \epsilon_{VIB} + \epsilon_{ROT} + \epsilon_{TRAS}}{k_B T}}
+		= Q_{EL} \cdot Q_{VIB} \cdot Q_{ROT} \cdot Q_{TRAS}
+	\label{eq:FunzionePartizioneMolecolareEnergie}
+\end{equation}
+I vari contributi alla funzione di partizione molecolare vengono determinati in maniera separata.
+
+\subsection{Contributo elettronico}
+Il contributo elettronico viene determinato tramite:
+\begin{equation}
+	Q_{EL} =  \sum e^{- \frac{\epsilon_{EL}}{k_B T}}
+	\label{eq:FunzionePartizioneMolecolareContributoElettronico}
+\end{equation}
+dove $\epsilon_{EL}$ è l'energia elettronica che si può ricavare usando l'equazione di Schr\"odinger:
+\begin{equation}
+	H \cdot \Psi = E_{EL} \cdot \Psi
+	\label{eq:FunzPartizMolecSchrodinger}
+\end{equation}
+\subsection{Contributo traslazionale}
+In questo caso il contributo traslazionale è ovviamente dato da;
+\begin{equation}
+	Q_{TRAS} =  \sum e^{- \frac{\epsilon_{TRAS}}{k_B T}}
+	\label{eq:FunzionePartizioneMolecolareContributoTraslazionale}
+\end{equation}
+Poichè, per quanto visto precedentemente (equazione \ref{eq:EScaPot3D}), possiamo scrivere:
+\begin{equation}
+	\epsilon_{TRAS} = \frac {h^2}{8 m} \cdot 
+										\left( \frac{n_1^2}{L^2} + \frac{n_2^2}{L^2} + \frac{n_3^2}{L^2}\right)
+	\label{eq:FunzPartizMolEnergTras}
+\end{equation}
+con $n_1$, $n_2$ e $n_3$ che indicano i numeri quantici di moto nelle tre direzioni; si ha anche:
+\begin{multline}
+	Q_{TRAS} =  \sum e^{-{\frac {h^2}{8 m L^2} \cdot 
+							\left( n_1^2 + n_2^2 + n_3^2\right)}\frac{1}{k_B T}} = \\
+										\sum e^{- {\frac {h^2}{8 m L^2} \cdot n_1^2}\frac{1}{k_B T}}
+							\cdot \sum e^{- {\frac {h^2}{8 m L^2} \cdot n_2^2}\frac{1}{k_B T}}
+							\cdot \sum e^{- {\frac {h^2}{8 m L^2} \cdot n_3^2}\frac{1}{k_B T}}
+	\label{eq:FunzionePartizioneMolecolareContributoTraslazionaleNumQuantici}
+\end{multline}
+esprimendo:
+\begin{equation}
+	\alpha = \left( \frac{h^2}{8 k_B \cdot T \cdot m \cdot L^2}\right)^{\frac{1}{2}}
+	\label{eq:FunzPartizMolEnergTrasAlpha}
+\end{equation}
+Abbiamo quindi:
+\begin{equation}
+	Q_{TRAS} =  \sum e^{- \alpha^2 \cdot n_1^2} +
+							\sum e^{- \alpha^2 \cdot n_2^2} +
+							\sum e^{- \alpha^2 \cdot n_3^2}
+	\label{eq:FunzionePartizioneMolecolareContributoTraslazionaleNumQuanticiAlpha}
+\end{equation}
+Possiamo anche, per ogni singolo $n_i$ scrivere:
+\begin{equation}
+	\sum e^{- \alpha^2 \cdot n_i^2} = \sum e^{- \alpha^2 \cdot n_i^2} \cdot \Delta n
+	\label{eq:QtraslNiDn}
+\end{equation}
+essendo $\Delta n = (n + 1) - n = 1$, ma anche:
+\begin{equation}
+	\sum e^{- \alpha^2 \cdot n_i^2} = \sum e^{- \alpha^2 \cdot n_i^2} \cdot \Delta n \cdot \frac{\alpha}{\alpha} = \frac{1}{\alpha} \sum e^{- \alpha^2 \cdot n_i^2} \cdot \Delta n \cdot \alpha
+	\label{eq:QtraslNiDnAlphaSuAlpha}
+\end{equation}
+Se $\alpha$ è sufficientemente piccola possiamo approssimare la sommatoria con un integrale e quindi:
+\begin{equation}
+	\sum e^{- \alpha^2 \cdot n_i^2} = \frac{1}{\alpha} \int_0^{\infty} e^{- \alpha^2 \cdot n_i^2} \cdot \Delta n \cdot \alpha = \frac{1}{\alpha} \int_0^{\infty} e^{- x^2} d x = \frac{1}{\alpha} \cdot \frac{\sqrt{\pi}}{2}
+	\label{eq:IntQtraslNiDnAlphaSuAlpha}
+\end{equation}
+Da cui tornando all'equazione \ref{eq:FunzionePartizioneMolecolareContributoTraslazionaleNumQuantici} ricaviamo:
+\begin{equation}
+	Q_{TRAS} = \left( \frac{1}{\alpha} \cdot \frac{\sqrt{\pi}}{2} \right)^3
+	\label{eq:QTrasFinaleAlpha}
+\end{equation}
+ed esplicitando $\alpha$ abbiamo:
+\begin{equation}
+	Q_{TRAS} = \left( \frac{8 k_B \cdot T \cdot m \cdot L^2}{h^2} \cdot \frac{\pi}{4} \right)^{\frac{3}{2}} = \left( \frac{2 \pi \cdot k_B \cdot T \cdot m }{h^2} \right)^{\frac{3}{2}} \cdot L^3
+	\label{eq:QTrasFinale}
+\end{equation}
+dove $L^3 = V$ ovvero il volume.
+
+\subsection{Contributo vibrazionale}
+Come nei casi precedenti abbiamo:
+\begin{equation}
+	Q_{VIB} =  \sum e^{- \frac{\epsilon_{VIB}}{k_B T}}
+	\label{eq:FunzionePartizioneMolecolareContributoVibrazionale}
+\end{equation}
+Possiamo esprimere l'energia vibrazionale considerando l'oscillatore nell'intorno di un punto, quindi:
+\begin{equation}
+	\epsilon_{VIB} =  \left( \frac{1}{2} + n \right) \cdot h \cdot \nu
+	\label{eq:EVibOsillatoreIntornoPunto}
+\end{equation}
+Da cui si ricava:
+\begin{equation}
+	Q_{VIB} = \sum e^{- \left( \frac{1}{2} + n \right) \cdot \frac{h \cdot \nu}{k_B T}}
+					= \sum e^{- \frac{1}{2} \cdot \frac{h \cdot \nu}{k_B T}} \cdot
+						e^{- n \cdot \frac{h \cdot \nu}{k_B T}}
+					= e^{- \frac{1}{2} \cdot \frac{h \cdot \nu}{k_B T}} \cdot
+						\sum e^{- n \cdot \frac{h \cdot \nu}{k_B T}}
+	\label{eq:FunzionePartizioneMolecolareContributoVibrazionaleEnergia}
+\end{equation}
+Dove l'ultimo passaggio è stato ottenuto essendo:
+\begin{equation}
+	\frac{h \cdot \nu}{2 k_B T} = cost
+	\label{eq:RappCostEVib}
+\end{equation}
+Sviluppando la somatoria abbiamo:
+\begin{equation}
+	Q_{VIB} = e^{- \frac{1}{2} \cdot \frac{h \cdot \nu}{k_B T}} \cdot
+						\left(  1 +
+										e^{- 1 \cdot \frac{h \cdot \nu}{k_B T}} + 
+										e^{- 2 \cdot \frac{h \cdot \nu}{k_B T}} +
+										e^{- 3 \cdot \frac{h \cdot \nu}{k_B T}} +
+										\dots	\right)
+	\label{eq:QVibEspansioneSommatoria}
+\end{equation}
+e di conseguenza\footnote{Essendo $1 + x + x^2 + x^3 + ... = \frac{1}{1 - x}$} otteniamo:
+\begin{equation}
+	Q_{VIB} = e^{- \frac{h \cdot \nu}{2 k_B T}} \cdot \frac{1}{1 - e^{\frac{h \cdot \nu}{k_B T}}} =  \frac{e^{- \frac{h \cdot \nu}{2 k_B T}}}{1 - e^{\frac{h \cdot \nu}{k_B T}}}
+	\label{eq:QVibFinale}
+\end{equation}
+
+\subsection{Contributo rotazionale}
+Per il calcolo dell'energia rotazionale si procede in modo analogo al caso vibrazionale e il risultato finale è dato da:
+\begin{equation}
+	Q_{ROT} = \frac	{8 \pi^2 (2 \pi k_B T)^{\frac{3}{2}} \cdot \sqrt{I_x \cdot I_y \cdot I_z}}
+									{\sigma \cdot h^3}
+	\label{eq:QRotFinale}
+\end{equation}
+dove $I_x$, $I_y$ e $I_z$ rappresentano i tre momenti di inerzia della molecola nelle tre direzioni, mentre $\sigma$ indica il grado di simmetria della molecola.

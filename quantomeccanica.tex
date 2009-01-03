@@ -1,0 +1,593 @@
+\chapter{Meccanica quantistica}
+Dallo studio della radiazione emessa dal corpo nero Stefan\footnote{Stefan, Joseph (Sankt Peter 1835 - Vienna 1893), fisico austriaco.} e Boltzman\footnote{Boltzmann, Ludwig (Vienna 1844 - Duino 1906), fisico austriaco.} deducono la legge che prende il loro nome, secondo cui:
+\begin{equation}
+	M=\sigma \cdot T^4
+	\label{eq:StefanBoltzman}
+\end{equation}
+dove \(M\) è la potenza emessa rispetto l'area che la emette, mentre \(\sigma\) è la costante di Stefan-Boltzman.
+
+Non tutte le lunghezze d'onda sono emesse nello stesso modo, e la \(\lambda_{MAX}\) può essere dedotta dalla legge di Wien\footnote{Wien, Wilhelm Carl (Gaffken, Prussia 1864 - Monaco 1928), fisico tedesco.} dove:
+\begin{equation}
+	\lambda_{MAX} \cdot T = cost \approx 2.9 [mm K]
+\end{equation}
+
+La fisica classica cerca di spiegare l'emissione di radiazione come se il corpo nero fosse composto da un gran numero di oscillatori, ognuno dotato di frequenza propria, che sono messi vibrazione dalla temperatura, emettendo ognuno la propria frequenza caratteristica. Questa radiazione essendo ripartita tra tutte le radiazioni caratteristiche porta ad uno spettro continuo. Per la fisica classica la densità della radiazione viene espressa dall'equazione di Rayleight\footnote{Chi era... }-Jeans\footnote{Chi era... }:
+\begin{equation}
+	\rho = \frac{d\epsilon}{d\lambda} = \frac{8 \pi k_B T}{\lambda^4} 
+\end{equation}
+Questa legge, però, non approssima bene i dati sperimentali e soprattutto da luogo alla \textit{catastrofe ultravioletta}, ovvero:
+\begin{equation}
+	\underset{\lambda \rightarrow 0}{lim} \, \rho = \infty
+\end{equation}
+
+Plank\footnote{Chi era... } spiega le emissioni del corpo nero con una nuova teoria: gli oscillatori non possono variare in modo continuo la quantità di energia emessa, ma la emettono in maniera discreta e più esattamente, l'enegia dipende dalla frequenza di vibrazione $\nu$ secondo la legge: secondo la legge:
+\begin{equation}
+	E=h \cdot \nu \cdot n
+\end{equation}
+dove \(h\) è la costante di Plank e \(n=1, 2, 3, \ldots\)
+
+Da queste premesse vengono ricalcolate le emissioni del corpo nero, da cui risulta che:
+\begin{equation}
+	\rho = \frac{8 \pi h c}{\lambda^5} \cdot \frac{e^{-\frac{h c}{\lambda k_B T}}}{1 - e^{-\frac{h c}{\lambda k_B T}}}
+\end{equation}
+
+Nel 1929, grazie alla critica che Haisenberg\footnote{Heisenberg, Werner (Würzburg 1901 - Monaco 1976), fisico tedesco.} muove nei confronti della meccanica classica viene formulato il principio di indeterminazione di Heisenberg secondo cui:
+\begin{equation}
+	\Delta p \cdot \Delta x \geq \frac {h}{2}
+\end{equation}
+Dove con \(\Delta p\) si è indicata la variazione della quantità di moto della particella, mentre con \(\Delta x\) la variazione della sua posizione. \\
+Come conseguenza se ne deduce che non è possibile determinare la posizione e la velocità di una particella in un certo istante a meno di commettere un errore su una di esse tanto maggiore quanto più precisa è l'altra misura.
+
+Un'altro aspetto che la fisica classica non era in grado di spiegare è l'osservazione delle righe spettrali degli atomi, che non sono continue, ma assumono valori ben definiti e interpretabili secondo l'equzione di Rydlberg\footnote{Rydberg, Robert Johannes, fisico svedese.}:
+\begin{equation}
+	\bar{\nu} = R_h \left( \frac{1}{2^2} - \frac{1}{n^2} \right)
+\end{equation}
+Con \(\bar{\nu}=\nu/c\) mentre $R_h$ è la costante di Rydlberg e $n=1, 2, 3, \ldots$.\\
+Questa equazione suggerisce che le energie che un atomo può assumere sono ben determinate e quantizzate.
+
+Partendo da questo presupposto Bohr\footnote{Bohr, Niels Henrik David (Copenaghen 1885-1962), fisico danese.} propone il modello atomico in cui il momento angolare degli elettroni intorno al nucleo è confinato in determinati valori e permette soltanto alcune energie, paria a:
+\begin{equation}
+	E_n = -\frac{\mu e^4}{8 h^2 \epsilon^2_0 n^2}
+\end{equation}
+in cui indichiamo con \(\mu\) la massa ridotta, pari a:
+\begin{equation}
+	\frac{1}{\mu}= \frac{1}{m_e} - \frac{1}{m_n}
+\end{equation}
+Dove \(m_e\) indica la massa degli elettroni e \(m_n\) la massa del nucleo.
+
+%===================================================================================================
+\section{Operatori e le loro proprietà}
+
+L'operatore matematico è il simbolo di un procedimento che produce un cambiamento (fusione) in un certo oggetto.
+
+Dato un operatore \(\Omega\) e una funzione \(f_{(x)}\) si dice che \(f_{(x)}\) è autofunzione di \(\Omega\) con autovalore \(\lambda\) se è vero:
+\begin{equation}
+	\Omega\left( f_{(x)} \right) = \lambda \cdot f_{(x)}
+\end{equation}
+
+Per esempio consideriamo:
+\begin{align}
+	\Omega = \left( \frac{d}{dx} \right) \\
+	f_{(x)} = e^{\alpha x}
+\end{align}
+da cui si evince:
+\begin{equation}
+	\Omega \left( f_{(x)} \right) = \frac{d}{dx} \left( e^{\alpha x} \right) = \alpha e^{\alpha x}
+\end{equation}
+Dove l'autovalore \(\lambda\) è pari a \(\alpha\).
+
+Tra i principali operatori ricordiamo:
+\begin{itemize}
+	\item Operatore di moltiplicazione per una costante \(c \cdot \)
+	\item Operatore di elevazione al quadrato \(\left(\,\right)^2\)
+	\item Operatore di derivazione \(\frac{d}{dx}\)
+	\item Operatore di commutazione \(\left[ A , B \right]\) con \(A\) e \(B\) operatori. \\
+				Questo operatore indica il grado di simmetria tra gli operatori \(A\) e \(B\) e viene determinato come 
+				\begin{equation}
+					\left[ A , B \right] = AB - BA
+				\end{equation}
+\end{itemize}
+Un operatore è lineare se è verificato:
+\begin{equation}
+	\Omega\left(f_{(x)} \cdot g_{(x)}\right) = \Omega\left(f_{(x)} \right) + \Omega\left( g_{(x)}\right)
+\end{equation}
+e anche 
+\begin{equation}
+	\Omega\left(k \cdot f_{(x)} \right) = k \cdot \Omega\left(f_{(x)} \right)
+\end{equation}
+
+%===================================================================================================
+\section{Assiomi della quantomeccanica}
+\subsection{La funzione d'onda}
+Lo stato di un sistema è completamente descritto da una funzione detta funzione d'onda, descritta come:
+\begin{equation}
+	\Psi=\Psi \left( x_1, y_1, z_1, \ldots, x_n, y_n, z_n, \sigma_1, \sigma_2, \ldots , \sigma_n, t  \right)
+\end{equation}
+dove
+
+	\( x_n, y_n, z_n = \) Posizione della particella \(n\)
+	
+	\( \sigma_n = \)			Spin della particella \(n\)
+	
+	\( t = \) 						tempo\\
+La risoluzione della funzione d'onda porta a determinare i numeri quantici.
+
+\subsection{Gli osservabili}
+Gli osservabili sono rapresentati da operatori che soddisfano le seguenti operazioni di commutazione:
+\begin{equation}
+	\left[ q , p_{q^I} \right] = i \hbar \delta_{q q^I} 	\:\:
+ 				\begin{cases}
+					\delta_{q q^I} = 0	& \forall \: q \neq q^I \\
+					\delta_{q q^I} = 1	& \forall \: q = q^I
+				\end{cases}
+\end{equation}
+\begin{equation}
+	\left[ q , q^I \right] = 0
+\end{equation}
+\begin{equation}
+	\left[ p_q , p_{q^I} \right] = 0 	
+\end{equation}
+Dove \(q\) e \(q^I\) indicano una delle coordinate spaziali mentre \(p_q\) e \(p_{q^I}\) i corrispondenti momenti.\\
+Questa proprietà non è dimostrabile ne derivabile dagli altri assiomi, e tra gli osservabili è escluso lo spin.
+
+\subsection{Il valore medio}
+Il valore medio dell'osservabile \(\Omega\) è definito come:
+\begin{equation}
+	<\Omega> = \frac{\int{\Psi^*\Omega^{OP}\Psi d\tau}}{\int{\Psi^*\Psi d\tau}}
+\end{equation}
+
+\subsection{La probabilità}
+La probabilità che una particella si trovi in un elemento di volume \(d \tau\) è proporzinale a \( \left|\Psi_{(r)}\right|^2 d\tau \)
+
+\subsection{L'equazione di Schr\"odinger}
+La funzione d'onda evolve nel tempo in accordo con l'equazione
+\begin{equation}
+	H \Psi = i \hbar \frac{\partial \Psi}{\partial t}
+	\label{eq:SchTimDip}
+\end{equation}
+chiamata equazione di Schr\"odinger\footnote{Schrödinger, Erwin (Vienna 1887-1961), fisico teorico austriaco.} dipendente dal tempo.
+L'operatore \(H\) è l'hamiltoniano e rappresenta l'energia totale del sistema. Viene espresso come la somma dell'energia cinetica (T) e potenziale (V) delle particelle considerate.
+\begin{equation}
+	H = T + V
+	\label{eq:OpHamilt}
+\end{equation}
+
+
+%===================================================================================================
+\section{L'equazione di Schr\"odinger}
+Per una particella di massa \(m\) l'energia cinetica è
+\begin{equation}
+	T = \frac{1}{2 m}p^2 = \frac{1}{2 m}\left( p_x^2 + p_y^2 + p_z^2 \right)
+	\label{eq:ECinetica}
+\end{equation}
+essendo, per definizione
+\begin{equation}
+	p_x = \frac{\hbar}{i} \cdot \frac{\partial}{\partial x}
+\end{equation}
+la sua elevazione al quadrato
+\begin{equation}
+	p_x^2 = - \hbar^2 \cdot \frac{\partial^2}{\partial x^2}
+\end{equation}
+e anche 
+\begin{equation}
+	T = -\frac{\hbar^2}{2 m} \cdot  \frac{\partial^2}{\partial x^2}
+	\label{eq:EnCinMono}
+\end{equation}
+da cui, estenendo sulle tre dimensioni:
+\begin{equation}
+	p^2 = p_x^2 + p_y^2 + p_z^2 = 
+				- \hbar^2 \cdot \left(\frac{\partial^2}{\partial x^2} 
+				+ \frac{\partial^2}{\partial y^2} 
+				+ \frac{\partial^2}{\partial z^2}\right) 
+				= - h \cdot \nabla^2
+\end{equation}
+Quindi l'equazione \ref{eq:ECinetica} risulta essere:
+\begin{equation}
+	T = -\frac{\hbar^2}{2 m} \cdot \nabla^2
+	\label{eq:EnCinet}
+\end{equation}
+E l'equazione di Schr\"odinger ( \ref{eq:SchTimDip} ) considerando l'equazione \ref{eq:OpHamilt} e \ref{eq:EnCinet} diventa: 
+\begin{equation}
+	i \hbar \frac{\partial\Psi}{\partial t} = - \frac{\hbar^2}{2 m} \nabla^2\Psi + V \Psi
+\end{equation}
+
+%===================================================================================================
+\section{L'equazione di Schr\"odinger indipendente dal tempo}
+Se l'enerigia potenziale è indipendente dal tempo è possibile semplificare l'equazione di Schr\"odinger ponendo:
+\begin{equation}
+	\Psi_{(\vec{r}, \vec{\sigma}, t)} = \Phi_{(\vec{r}, \vec{\sigma})} \cdot g_{(t)}
+\end{equation}
+quindi
+\begin{equation}
+	H\left(\Phi \cdot g\right) = i \hbar \frac{\partial \Phi g}{\partial t} = 
+															i \hbar \Phi \frac{\partial g}{\partial t}
+	\label{eq:SchSost}
+\end{equation}
+e anche, ricordando l'equazione \ref{eq:EnCinet} dell'energia cinetica:
+\begin{equation}
+	i \hbar \Phi \frac{\partial g}{\partial t} = 
+	-\frac{\hbar^2}{2 m} \nabla^2 \left(\Psi \cdot g \right) + V \left( \Psi \cdot g \right) =
+	-\frac{\hbar^2}{2 m} \cdot g \nabla^2 \Psi + V \left( \Psi \cdot g \right)
+	\label{eq:SchSostT}
+\end{equation}
+Dividendo ambo i membri per $\Phi \cdot g$ otterremmo:
+\begin{equation}
+	i \hbar \frac{1}{g} \frac{\partial g}{\partial t} = 
+	-\frac{\hbar^2}{2 m} \frac{1}{\Psi } \nabla^2 \Psi + V
+	\label{eq:SchSostTDivPhiG}
+\end{equation}
+Poichè il membro di sinistra dipende solo dal tempo $t$, mentre quello di destra dipende dalla posizione entrambi i membri devono essere uguali ad una costante ($E$).
+Si ottengono così due equazioni, una dipendente dalla posizione e l'altra dipendente dal tempo:
+\begin{equation}
+	- \frac{\hbar^2}{2 m}\frac{1}{\Phi} \cdot \nabla^2 \Phi + V = E
+	\label{eq:EqSchTimeIndip}
+\end{equation}
+\begin{equation}
+	i \hbar \frac{\partial g}{\partial t} = E \cdot g
+	\label{eq:EqSchTime}
+\end{equation}
+Dove si è indicato con \(E\) la costante.
+Dall'equazione \ref{eq:EqSchTime}, separando le variabili, otteniamo:
+\begin{equation}
+	\frac{i \hbar }{g} dg = E dt
+	\label{eq:EqSchTimeRis}
+\end{equation}
+che integrata permette di avere
+\begin{equation}
+	g_{(t)} = g_{(0)} \cdot e^{\frac{E}{i \hbar} t}
+	\label{eq:EqSchTimeFin}
+\end{equation}
+mentre l'equazione di Schr\"odinger indipendente dal tempo (equazione \ref{eq:EqSchTimeIndip}) risulta essere:
+\begin{equation}
+	- \frac{\hbar^2}{2 m} \nabla \Phi + V \Phi = H \Phi = E \Phi 
+	\label{eq:EqSchTimeIndPhi}
+\end{equation}
+Poichè consideriamo l'equazione indipendente dal tempo possiamo scriverla anche come:
+\begin{equation}
+	H \Psi = E \Psi 
+	\label{eq:EqSchTimeInd}
+\end{equation}
+Applicandola al caso di atomo di idrogeno e ponendo l'origine delle coordinate spazieli del centro del nucleo otterremmo:
+\begin{equation}
+	- \frac{\hbar^2}{2 m} \nabla^2 \Phi - \frac{e_{-}^2}{4 \pi \epsilon_0 \vec{r}} \Phi = E \Phi
+	\label{eq:EqSchTimeIndIdrogeno}
+\end{equation}
+Essendo l'energia potenziale:
+\begin{equation}
+	V = - \frac{e_{-}^2}{4 \pi \epsilon_0 \vec{r}}
+	\label{eq:EnPotIdrogeno}
+\end{equation}
+Dove \(\vec{r}\) indica la distanza dal centro del nucleo, mentre $e_-$ la carica dell'elettrone.
+
+%===================================================================================================
+\section{Particella in una scatola di potenziale monodimensionale}
+Consideriamo una particella il cui movimento sull'asse $x$ è compresa tra $0$ e $L$. All'interno della scatola l'energia potenziale $(V$) assume valore nullo, mentre all'esterno assume $\infty$, come rappresentato in \figurename~\ref{fig:MQ:ScatolaPotenziale}.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.60\textwidth]{image/MQScatolaPotenziale.pdf}
+	\caption{Andamento dell'energia potenziale lungo l'asse x}
+	\label{fig:MQ:ScatolaPotenziale}
+\end{figure}
+
+L'equazione di Schr\"odinger indipendente dal tempo (\ref{eq:EqSchTimeInd}) diventa, essendo l'energia potenziale nulla:
+\begin{equation}
+	H \Phi = E \Phi = T \Phi + V \Phi = T \Phi 
+	\label{eq:EqSchTimeIndScatPot}
+\end{equation}
+quindi per quando visto precedentemente (equazione \ref{eq:EnCinMono}) potremmo scrivere l'equazione \ref{eq:EqSchTimeIndScatPot} come:
+\begin{equation}
+	E \Phi = T \Phi = - \frac{\hbar^2}{2 m} \cdot \frac{\partial^2 \Phi}{\partial x^2}
+	\label{eq:EqSchTimeIndScatPot2}
+\end{equation}
+e anche:
+\begin{equation}
+	\frac{\partial^2 \Phi}{\partial x^2} +  \frac{2 m E}{\hbar^2} \Phi = 0 
+	= \frac{\partial^2 \Phi}{\partial x^2} +  k^2 \Phi
+	\label{eq:EqSchTimeIndScatPotVarSep}
+\end{equation}
+dove si è posto
+\begin{equation}
+	k^2= \frac{2 m E}{\hbar^2}
+	\label{eq:DefinizK}
+\end{equation}
+
+L'equazione \ref{eq:EqSchTimeIndScatPotVarSep} può essere risolta ponendo
+\begin{equation}
+	\Phi = A cos(k x) + B sin(k x)
+	\label{eq:EquazPhiScatPot}
+\end{equation}
+e considerando le condizioni ai limiti della scatola, ovvero:
+\begin{align}
+	\Phi_{(0)} & = 0 = A cos(0) + B sin(0) \\
+	\Phi_{(L)} & = 0 = A cos(k L) + B sin(k L)
+	\label{eq:EquazPhiLimitScatPot}
+\end{align}
+si nota che poichè la prima equazione è verificata se $A = 0$ la seconda si riduce a 
+\begin{equation}
+	\Phi_{(L)} = 0 = B sin(k L)
+	\label{eq:EquazPhiLimitScatPotSemplif}
+\end{equation}
+Essendo \(B \neq 0\) l'equazione \ref{eq:EquazPhiLimitScatPotSemplif} è verificata se \(k L = n \pi\) da cui si evince, ricordando il significato di $k$ riportato nell'equazione \ref{eq:DefinizK}:
+\begin{equation}
+	\sqrt{\frac{2 m E}{\hbar^2}} L = n \pi
+	\label{eq:SoluzScatPot}
+\end{equation}
+che risolta rispetto a \(E\) porta a:
+\begin{equation}
+	\frac{2 m E}{\hbar^2} L^2 = n^2 \pi^2
+	\label{eq:SoluzQuadScatPot}
+\end{equation}
+\begin{equation}
+	E = \frac{ n^2 \pi^2 \hbar^2}{L^2 2 m}
+	\label{eq:SoluzEScatPot}
+\end{equation}
+Da cui si evidenzia che l'energia è quantizzata.
+
+Il valore della costante \(B\) viene determinato ricordanosi che la probabilità della particella di trovarsi nella scatola è unitaria, quindi:
+\begin{multline}
+	\int_0^L{\left|\Phi\right|^2dx}	= 
+	B^2 \int_0^L{sin^2\left(k x \right)} dx = \\
+	B^2 \int_0^L{sin^2\left(\frac{n \pi}{L} x \right)} dx =
+	\left[\frac{x}{2} - \frac{sin(2 k x)}{4 k}\right]^L_0 \cdot B^2 =1
+	\label{eq:IntBScatPot}
+\end{multline}
+che risolta
+\begin{equation}	
+	\left(\frac{L}{2} - \frac{sin(2 n \pi)}{4 \frac{n \pi}{L}}\right) - \left(\frac{0}{2} - \frac{sin(0)}{4 \frac{n \pi}{L}}\right) = \frac{1}{B^2} = \frac{L}{2}
+	\label{eq:SoluzIntBScatPot}
+\end{equation}
+e quindi è evidente che:
+\begin{equation}	
+	B = \sqrt{\frac{2}{L}}
+	\label{eq:ValBScatPot}
+\end{equation}
+Da cui si ottiene che 
+\begin{equation}	
+	\Phi_{(x)} = \sqrt{\frac{2}{L}} sin\left(\frac{n \pi}{L} x \right)
+	\label{eq:PhiScatPot}
+\end{equation}
+e la probabilità della particella di trovarsi nella posizione \(x\) della scatola diventa 
+\begin{equation}	
+	\left|\Phi_{(x)}\right|^2 = \frac{2}{L} sin^2\left(\frac{n \pi}{L} x \right)
+	\label{eq:ProbScatPot}
+\end{equation}
+
+\subsection{Particella in una buca di potenziale tridimensionale}
+Nel caso di una scatola tridimensionale con dimensioni \(a \times b \times c\) essendo:
+\begin{equation}	
+	H \Phi = E \Phi = - \frac{\hbar^2}{2 m} \cdot \left(\frac{\partial^2 \Phi}{\partial x^2} 
+				+ \frac{\partial^2 \Phi}{\partial y^2} 
+				+ \frac{\partial^2 \Phi}{\partial z^2}\right) 
+	\label{eq:SchScatPot3D}
+\end{equation}
+e per simetria si ha:
+\begin{equation}	
+	\Phi_{(x, y, z)} = \Phi_{(x)} \cdot \Phi_{(y)} \cdot\Phi_{(z)} = \Phi_1 \cdot \Phi_2 \cdot\Phi_3
+	\label{eq:SchSimmScatPot3D}
+\end{equation}
+Che sostituite nell'equazione \ref{eq:SchScatPot3D} porta a
+\begin{equation}	
+	- \frac{\hbar^2}{2 m} \cdot \left( \Phi_2 \cdot\Phi_3 \cdot \frac{\partial^2 \Phi_1}{\partial x^2} 
+				+ \Phi_1 \cdot \Phi_3 \cdot \frac{\partial^2 \Phi_2}{\partial y^2} 
+				+ \Phi_1 \cdot \Phi_2 \cdot \frac{\partial^2 \Phi_3}{\partial z^2}\right) = E \cdot \Phi_1 \cdot \Phi_2 \cdot\Phi_3
+	\label{eq:SchScatSimmPot3D}
+\end{equation}
+
+Dividendo ambo i membri dell'equazione per \(\Phi_1 \cdot \Phi_2 \cdot\Phi_3\) otteniamo
+\begin{equation}	
+	- \frac{\hbar^2}{2 m} \cdot \left( \frac{1}{\Phi_1} \cdot \frac{\partial^2 \Phi_1}{\partial x^2} 
+				+ \frac{1}{\Phi_2}  \cdot \frac{\partial^2 \Phi_2}{\partial y^2} 
+				+ \frac{1}{\Phi_3} \cdot \frac{\partial^2 \Phi_3}{\partial z^2}\right) = E 
+	\label{eq:SchSostDivScatPot3D}
+\end{equation}
+Ponendo \(\frac{2 m  E}{\hbar^2}= k_1 + k_2 + k_3\) e sostituendolo nell'equazione appena vista si ottiene:
+\begin{equation}	
+	\left( \frac{1}{\Phi_1} \cdot \frac{\partial^2 \Phi_1}{\partial x^2} + k_1^2 \right) +
+	\left( \frac{1}{\Phi_2} \cdot \frac{\partial^2 \Phi_2}{\partial x^2} + k_2^2 \right) +
+	\left( \frac{1}{\Phi_3} \cdot \frac{\partial^2 \Phi_3}{\partial x^2} + k_3^2 \right) = 0
+	\label{eq:SchSostKDivScatPot3D}
+\end{equation}
+
+Dovendo essere ogni elemento dell'equazione \ref{eq:SchSostKDivScatPot3D} nullo si ricava, come per il caso monodimensionale:
+\begin{align}	
+	\Phi_1 & = \sqrt{\frac{2}{a}} sin\left(\frac{n_1 \pi}{a} x \right) \\
+	\Phi_2 & = \sqrt{\frac{2}{b}} sin\left(\frac{n_2 \pi}{b} y \right) \\
+	\Phi_3 & = \sqrt{\frac{2}{c}} sin\left(\frac{n_3 \pi}{c} z \right)
+	\label{eq:PhiScatPot3D}
+\end{align}
+e quindi:
+\begin{equation}	
+	\Phi_{(x, y, z)} = \Phi_1 \cdot \Phi_2 \cdot\Phi_3 = 2 \cdot
+		\sqrt{\frac{2}{a b c}} sin\left(\frac{n_1 \pi}{a} x \right) \cdot
+		sin\left(\frac{n_2 \pi}{b} y \right) \cdot
+		sin\left(\frac{n_3 \pi}{c} z \right)
+	\label{eq:DefPhiScatPot3D}
+\end{equation}
+mentre l'energia risulta essere:
+\begin{equation}	
+	E^{3D} = 	\frac{n_1^2 \pi^2}{a^2} \frac{\hbar^2}{2 m} + 
+						\frac{n_2^2 \pi^2}{b^2} \frac{\hbar^2}{2 m} + 
+						\frac{n_3^2 \pi^2}{c^2} \frac{\hbar^2}{2 m}
+	\label{eq:EScaPot3D}
+\end{equation}
+
+% ==================================================================================================
+\section{Oscillatore armonico monodimensionale}
+Analizziamo una particella che si muove lungo l'asse $x$ sottoposta a una forza di richiamo 
+nell'origine pari a $F = -K x$; di conseguenza l'energia potenziale è:
+\begin{equation}	
+	V = \frac{K}{2}x^2
+	\label{eq:VOscArmMono}
+\end{equation}
+per cui l'equazione di Schr\"odinger indipendente dal tempo (equazione \ref{eq:EqSchTimeInd}) diventa:
+\begin{equation}	
+	H \Psi = E \Psi = 
+	T \Psi + V \Psi = 
+	- \frac{\hbar}{2 m} \frac{\partial^2 \Psi}{\partial x^2} + \frac{K}{2}x^2 \Psi
+	\label{eq:SchOscArmMon}
+\end{equation}
+Questa equazione può essere riarrangiata, per essere risolta più agevolmente, nel seguente modo:
+\begin{equation}	
+	\frac{\hbar^2}{2 m} \frac{\partial^2 \Psi}{\partial x^2} + \left( E - \frac{K}{2}x^2 \right) \Psi  = 0
+	\label{eq:SchArrOscArmMon}
+\end{equation}
+Dividendo il tutto per $\frac{\hbar^2}{2 m}$ otteniamo:
+\begin{equation}	
+	\frac{\partial^2 \Psi}{\partial x^2} + \left( \frac{2 m E}{\hbar^2} - \frac{K m}{ \hbar^2} x^2 \right) \Psi  = 0
+	\label{eq:SchDivOscArmMon}
+\end{equation}
+Ponendo $\alpha = \frac{2 m E}{\hbar^2}$, $\beta = \sqrt{\frac{K m}{\hbar^2}}$ e $z = \beta^{\frac{1}{2}} x$ otteniamo:
+\begin{equation}	
+	\frac{\partial^2 \Psi}{\partial x^2} + \left( \alpha - \beta z^2 \right) \Psi  = 0
+	\label{SchRaccOscArmMon}
+\end{equation}
+Dividendo ambo i membri per $\beta$ otteniamo:
+\begin{equation}	
+	\frac{\partial^2 \Psi}{\partial \beta x^2} + \left( \frac{\alpha}{\beta} - z^2 \right) \Psi  =
+	\frac{\partial^2 \Psi}{\partial z^2} + \left( \frac{\alpha}{\beta} - z^2 \right) \Psi  = 0
+	\label{eq:SchDivBetaOscArmMon}
+\end{equation}
+
+Questa equazione, nel caso di $z^2>>\frac{\alpha}{\beta}$ porterebbe come soluzione a
+\begin{equation}	
+	\Psi = A \cdot e^{-\frac{z^2}{2}}
+	\label{eq:SoluzAproxPsiOscArmMon}
+\end{equation}
+
+Per far si che questa soluzione valga anche per valori di $z$ bassi va trasformata moltiplicandola per un polinomio ($v_{(z)}$) detto polinomio modulante, quindi otteniamo:
+\begin{equation}	
+	\Psi = v_{(z)} \cdot e^{-\frac{z^2}{2}}
+	\label{eq:SoluzPoliPsiOscArmMon}
+\end{equation}
+determiniamo ora il polinomio.
+
+Iniziamo a determinare, nota la funzione di $\Psi$ dall'equazione \ref{eq:SoluzPoliPsiOscArmMon}, le sue derivate:
+\begin{multline}	
+	\frac{\partial \Psi}{\partial z} = 
+				v_{(z)}^{'} \cdot e^{-\frac{z^2}{2}} +
+				v_{(z)} \cdot \left[ -\left( \frac{2}{2} z \right) e^{-\frac{z^2}{2}} \right] = 
+				v_{(z)}^{'} \cdot e^{-\frac{z^2}{2}} - v_{(z)} \cdot z \cdot e^{-\frac{z^2}{2}}
+	\label{eq:Deriv1PsiOscArmMon}
+\end{multline}
+mentre la derivata seconda risulterà essere
+\begin{multline}	
+	\frac{\partial^2 \Psi}{\partial z^2} = \\
+				v_{(z)}^{''} \cdot e^{-\frac{z^2}{2}} + 
+				\left( -z \cdot e^{-\frac{z^2}{2}} \right) \cdot v_{(z)}^{'} -
+				v_{(z)}^{'} \cdot z \cdot e^{-\frac{z^2}{2}} -
+				v_{(z)} \left[ 1 \cdot e^{-\frac{z^2}{2}} - 
+				z \cdot \left( -z \cdot e^{-\frac{z^2}{2}}\right) \right]	\\ = 
+				v_{(z)}^{''} \cdot e^{-\frac{z^2}{2}} -
+				2 \cdot v_{(z)}^{'} \cdot z \cdot e^{-\frac{z^2}{2}} -
+				v_{(z)} \cdot e^{-\frac{z^2}{2}} +
+				v_{(z)} \cdot z^2 \cdot  e^{-\frac{z^2}{2}}
+	\label{eq:Deriv2PsiOscArmMon}
+\end{multline}
+
+Sostituendo le equazioni \ref{eq:Deriv1PsiOscArmMon} e \ref{eq:Deriv2PsiOscArmMon} nell'equazione di Schr\"odinger (\ref{eq:SchDivBetaOscArmMon}) otteniamo:
+\begin{multline}	
+	v_{(z)}^{''} \cdot e^{-\frac{z^2}{2}} -
+	2 \cdot v_{(z)}^{'} \cdot z \cdot e^{-\frac{z^2}{2}} -
+	v_{(z)} \cdot e^{-\frac{z^2}{2}} + \\
+	v_{(z)} \cdot z^2 \cdot  e^{-\frac{z^2}{2}} +
+	\left( \frac{\alpha}{\beta} - z^2 \right) \cdot v_{(z)} \cdot e^{-\frac{z^2}{2}} = 0
+	\label{eq:SchPolModOscArmMon}
+\end{multline}
+che, effettuando le opportune semplificazioni, porta al seguente risultato:
+\begin{equation}	
+	v_{(z)}^{''} -
+	2 \cdot v_{(z)}^{'} \cdot z  -
+	\left( \frac{\alpha}{\beta} - 1 \right) \cdot v_{(z)}  = 0
+	\label{eq:SchPolModSemplOscArmMon}
+\end{equation}
+
+indichiamo ora il polinomio $v_{(z)}$ e le sue derivate come:
+\begin{align}	
+	v_{(z)}  			& = \sum^{\infty}_{n=0} a_n \cdot z^n \\
+	v_{(z)}^{'} 	& = \sum^{\infty}_{n=0} a_n \cdot n \cdot z^{n-1} \\
+	v_{(z)}^{''} 	& = \sum^{\infty}_{n=0} a_n \cdot n \cdot (n - 1) \cdot z^{n - 2} 
+	\label{eq:PolSommatorieOscArmMon}
+\end{align}
+
+Inserendo le equazioni appena viste nella \ref{eq:SchPolModSemplOscArmMon} otteniamo:
+\begin{equation}	
+	\sum^{\infty}_{n=0} a_n \cdot n \cdot (n - 1) \cdot z^{n - 2} -
+	2 \cdot \sum^{\infty}_{n=0} a_n \cdot n \cdot z^n  -
+	\left( \frac{\alpha}{\beta} - 1 \right) \cdot \sum^{\infty}_{n=0} a_n \cdot z^n  = 0
+	\label{eq:SchPolSommatorieSemplOscArmMon}
+\end{equation}
+Raccogliendo i vari termini si ricava:
+\begin{equation}	
+	\sum^{\infty}_{n=0} a_n \cdot n \cdot (n - 1) \cdot z^{n - 2} -
+	\sum^{\infty}_{n=0} a_n \cdot \left( - \frac{\alpha}{\beta} + 1 + 2 n \right)\cdot z^{n} = 0
+	\label{eq:SchPolSommatorieRaccolteSemplOscArmMon}
+\end{equation}
+
+L'equazione scritta è verificata se i termini che moltiplicano $z^n$ e $z^{n-2}$ sono equivalenti,ed essendo le due sfalsate di 2 abbiamo:
+\begin{equation}	
+	a_{n+2} \cdot (n+2) \cdot ((n+2) - 1) =
+	a_n \cdot \left( - \frac{\alpha}{\beta} + 1 + 2 n \right)
+	\label{eq:EquivTerminiSommatoriaOscArmMon}
+\end{equation}
+da cui si evidenzia:
+\begin{equation}
+	\frac	{a_{n+2}}
+				{a_{n}} = 
+	\frac	{1 - \frac{\alpha}{\beta} + 2 n}
+				{(n + 2) \cdot (n + 1)}
+	\label{eq:EquivTerminiSommatoriaOscArmMon}
+\end{equation}
+Determinando il limite per $n \rightarrow \infty$ otteniamo:
+\begin{equation}
+	\underset{n \rightarrow \infty}{lim} \, \frac	{a_{n+2}}
+				{a_{n}} = \frac{2}{n}
+	\label{eq:LimiteTerminiSommatoriaOscArmMon}
+\end{equation}
+che è confrontabile con l'espansione in serie di potenze di:
+\begin{equation}
+	e^{z^2} = \sum^{\infty}_{n=0} b_n \cdot z^n
+	\label{eq:EspansioneEz2OscArmMon}
+\end{equation}
+con $b_n = \frac{1}{n!}$.
+
+Essendo
+\begin{equation}
+	\underset{n \rightarrow \infty}{lim} \, \frac	{b_{n+1}}
+				{b_{n}} = \frac{1}{n}
+	\label{eq:LimiteBn}
+\end{equation}
+da cui consegue che il polinomio $v_{(x)}$ si comporta come $e^{z^2}$ e, ricordando l'equazione \ref{eq:SoluzPoliPsiOscArmMon} abbiamo:
+\begin{equation}	
+	\Psi =e^{z^2} \cdot e^{-\frac{z^2}{2}} = e^{\frac{z^2}{2}} 
+	\label{eq:SoluzPsiOscArmMon}
+\end{equation}
+
+Questo significherebbe che la probabilità di trovare la particella aumenta all'aumentare della distanza,
+ma essendo ciò non possibile il polinomio $v_{(x)}$ deve essere troncato.
+
+\'E altresì evidente che se 
+\begin{equation}
+	1 + 2 n - \frac{\alpha}{\beta} = 0
+	\label{eq:EspansioneEz2OscArmMon}
+\end{equation}
+allora il rapporto $\frac{a_{n+2}}{a_n}$ è nullo e quindi $v_{(x)}$ è un polinomio accettabile.
+Ricordando le definizioni di $\alpha$ e $\beta$ abbiamo:
+\begin{equation}
+	\frac{\alpha}{\beta} = 2 n + 1 = 
+			\frac{2 m E}{\hbar^2} \cdot \sqrt{\frac{\hbar^2}{K m}} = 
+	 		\frac{2 E}{\hbar} \cdot \sqrt{\frac{m}{K}}
+	\label{eq:AlphaSuBetaOscArmMon}
+\end{equation}
+da cui si vede che l'energia è quantizzata essendo:
+\begin{equation}
+	E = \sqrt{\frac{K}{m}} \cdot \hbar \left(n + \frac{1}{2}\right) = \nu \cdot \hbar \left(n + \frac{1}{2}\right)
+	\label{eq:EOscArmMon}
+\end{equation}
+dove $\sqrt{\frac{K}{m}}$ è la frequenza di vibrazione $\nu$.
+
+Nel caso di $n = 0$ abbiamo:
+\begin{equation}
+	E_0 = \frac{\hbar \nu }{2}
+	\label{eq:EoOscArmMon}
+\end{equation}
+chiamata energia di punto zero (ZPE), quindi le particella non è mai ferma ma in costante movimento.
